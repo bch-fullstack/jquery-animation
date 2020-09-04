@@ -13,9 +13,19 @@
             background-color: black;
             text-align: center;
             width: 100%;
-            height: 50px;
+            height: 500px;
             color: white;
+            
+        }
+
+        #title h1 {
+            height: 100%;
             vertical-align: middle;
+            font-family: 'Impact'
+        }
+
+        #title h1 .skill {
+            color: yellow;
         }
 
         #box1, #box2 {
@@ -27,7 +37,7 @@
 </head>
 <body>
     <div id="title">
-        <h1>jQuery Animation lecture</h1>
+        <h1>I am <span class="skill">friendly</span></h1>
     </div>
 
     <button id="fadeIn">Fade In</button>
@@ -47,6 +57,34 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script>
+        var skillSet = ['friendly', 'hard-working', 'funny']; // array
+        var counter = 0
+
+        function myFunction() {
+            var nextIndex = counter % skillSet.length // remainder the division will decide next skill to be displayed
+            var skill = skillSet[nextIndex]; // accessing the element with indexing of counter within the array
+
+            $('#title h1 .skill').text(skill);
+            $('#title h1 .skill').fadeTo(400, 1);
+            $('#title h1 .skill').fadeTo(400, 0.01);
+
+            counter = counter + 1;
+            /*
+            if (counter === skillSet.length - 1) {
+                counter = 0;
+            } else {
+                counter = counter + 1;
+            }*/
+        }
+
+        // myFunction(); 
+        // execute instantly
+
+        setInterval(myFunction, 1000) // run myFunction() every 5000ms
+
+        // setTimeout(myFunction, 5000) 
+        // delay running myFunction() for 5000ms
+
         // on('', param2)
         function completeAnimation(){
             alert('Done!');
