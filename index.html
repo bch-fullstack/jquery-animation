@@ -60,7 +60,7 @@
         var skillSet = ['friendly', 'hard-working', 'funny']; // array
         var counter = 0
 
-        function myFunction() {
+        function getSkill() {
             var nextIndex = counter % skillSet.length // remainder the division will decide next skill to be displayed
             var skill = skillSet[nextIndex]; // accessing the element with indexing of counter within the array
 
@@ -80,7 +80,7 @@
         // myFunction(); 
         // execute instantly
 
-        setInterval(myFunction, 1000) // run myFunction() every 5000ms
+        setInterval(getSkill, 1000) // run myFunction() every 5000ms
 
         // setTimeout(myFunction, 5000) 
         // delay running myFunction() for 5000ms
